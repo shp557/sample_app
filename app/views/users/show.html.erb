@@ -1,10 +1,18 @@
 <% @title = "User page" %>
 <div class="row">
-  <aside class="span4">
-    <section>
-      <h1>
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
+  <div class="span9">
+    <% if @user.events.any? %>
+      <h3>My events</h3>
+      <ol class="events">
+        <% @user.events.each do |event| %>
+          <li>
+            <h5><%= event.tag %></h1>
+            <p><small><%= event.start_date.strftime("%A, %b %e") %>, <%= event.start_time.strftime("%l:%M %P") %> - <%= event.end_time.strftime("%l:%M %P") %>, <%= event.location %> </small></p>
+            <%= link_to "edit", edit_event_path(event) %> | 
+            <%= link_to "delete", event, method: :delete, data: { confirm: "You sure?" } %>
+          </li>
+        <% end %>
+      </ol>
+    <% end %>
+  </div>
 </div>

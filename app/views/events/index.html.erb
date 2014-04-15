@@ -1,0 +1,52 @@
+<% @title = "HMS Events" %>
+<div class="row">
+	<aside class="span9">
+      	
+      	<section>
+	      <h3>Master list</h3>
+	    </section>
+
+	  	<table class="table table-striped table-condensed">
+		    <thead>
+		        <tr>
+		            <th>Date</th>
+		            <th>Start</th>
+		            <th>End</th>
+		            <th>Listing</th>
+		        </tr>
+		    </thead>
+		    <tbody>
+		        <% @events.each do |event| %>
+		        	<% if check(event) %>
+			        	<tr class="error">		        
+			        		
+				            <td><%= event.start_date.strftime("%A, %b %e") %></td>
+				            <td><%= event.start_time.strftime("%l:%M %P") %></td>
+				            <td><%= event.end_time.strftime("%l:%M %P") %></td>
+				            <td><%= link_to event.tag, event_path(event) %></td>
+				        </tr>
+				    <% else %>
+				    	<tr>		        
+			        		
+				            <td><%= event.start_date.strftime("%A, %b %e") %></td>
+				            <td><%= event.start_time.strftime("%l:%M %P") %></td>
+				            <td><%= event.end_time.strftime("%l:%M %P") %></td>
+				            <td><%= link_to event.tag, event_path(event) %></td>
+				        </tr>
+			        <% end %>
+		        <% end %>
+		    </tbody>
+		</table>
+  	</aside>
+  	<!--
+  	<div class="span9">
+  		<ol class="events">
+	    	<% @events.each do |event| %>
+	        	<li>
+	            	<span class="content"><%= event.tag %></span>
+	          	</li>
+	        <% end %>
+    	</ol>
+	</div>
+	-->
+</div>
