@@ -7,6 +7,10 @@ class EventsController < ApplicationController
 		@events = Event.where('start_date >= ?', Date.today).sort_by{ |event| [event.start_date, event.start_time] }
 	end
 
+	def calendar
+    	@events = Event.all
+  	end
+
 	def show
 		@event = Event.find(params[:id])
 		
@@ -17,7 +21,7 @@ class EventsController < ApplicationController
 	end
 
     def new
-    	@event = current_user.events.build
+    	@event = Event.new
 	end 
 
 	def create
@@ -31,9 +35,8 @@ class EventsController < ApplicationController
 	end
 
 	def edit
-		#@event = Event.find(params[:id])
 	end
-
+	
 	def update
 		@event = Event.find(params[:id])
 		if @event.update_attributes(event_params)

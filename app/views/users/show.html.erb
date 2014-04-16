@@ -1,8 +1,8 @@
 <% @title = "User page" %>
 <div class="row">
   <div class="span9">
+    <h3>My events</h3>
     <% if @user.events.any? %>
-      <h3>My events</h3>
       <ol class="events">
         <% @user.events.each do |event| %>
           <li>

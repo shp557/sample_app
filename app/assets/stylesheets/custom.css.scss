@@ -172,4 +172,11 @@ aside {
   }
 }
 
+/* calendar */
+
+.calendar td { 
+  height: 100px; 
+  width: 14.28%; 
+}
+
 @import "bootstrap-responsive";
