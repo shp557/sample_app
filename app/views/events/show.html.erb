@@ -4,10 +4,14 @@
     <h3><%= @event.tag %></h3>
     <ol class="events">
       <span class="content">
-        <li>Location: <%= @event.location %></li>
-        <li>Start time: <%= @event.start_time.to_s(:time) %></li>
-        <li>End time: <%= @event.end_time.to_s(:time) %></li>
-        <li>Description: <%= @event.content %></li>
+        <strong>Date</strong>
+          <li><%= @event.start_date.strftime("%A, %b %e") %></li>
+        <strong>Time</strong>
+          <li><%= @event.start_time.strftime("%l:%M %P") %>-<%= @event.end_time.strftime("%l:%M %P") %></li>
+        <strong>Location</strong>
+          <li><%= @event.location %></li>
+        <strong>Description</strong>
+          <li><%= @event.content %></li>
       </span>
     </ol>  
   </div>

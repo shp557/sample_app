@@ -1,9 +1,12 @@
 module EventsHelper
 	def check(event)
-		Time.zone = 'Eastern Time (US & Canada)'
-		d = event.start_date
-		t = event.end_time
-		dt = Time.zone.local(d.year, d.month, d.day, t.hour, t.min, t.sec)
-		dt < Time.zone.now
+		event.end_time < Time.now
 	end
+
+	def day(event)
+		x = event.start_date
+		y = Time.now
+		x.strftime("%A, %b %e") == y.strftime("%A, %b %e")
+	end
+
 end

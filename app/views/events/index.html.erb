@@ -1,11 +1,6 @@
 <% @title = "HMS Events" %>
 <div class="row">
 	<aside class="span9">
-      	
-      	<section>
-	      <h3>Master list</h3>
-	    </section>
-
 	  	<table class="table table-condensed">
 		    <thead>
 		        <tr>
@@ -18,35 +13,31 @@
 		    <tbody>
 		        <% @events.each do |event| %>
 		        	<% if check(event) %>
-			        	<tr class="error">		        
-			        		
+			        	<tr class="error">		
 				            <td><%= event.start_date.strftime("%A, %b %e") %></td>
 				            <td><%= event.start_time.strftime("%l:%M %P") %></td>
 				            <td><%= event.end_time.strftime("%l:%M %P") %></td>
 				            <td><%= link_to event.tag, event_path(event) %></td>
 				        </tr>
 				    <% else %>
-				    	<tr>		        
-			        		
-				            <td><%= event.start_date.strftime("%A, %b %e") %></td>
-				            <td><%= event.start_time.strftime("%l:%M %P") %></td>
-				            <td><%= event.end_time.strftime("%l:%M %P") %></td>
-				            <td><%= link_to event.tag, event_path(event) %></td>
-				        </tr>
+				    	<% if day(event) %>
+					    	<tr class="success">		        
+					            <td><%= event.start_date.strftime("%A, %b %e") %></td>
+					            <td><%= event.start_time.strftime("%l:%M %P") %></td>
+					            <td><%= event.end_time.strftime("%l:%M %P") %></td>
+					            <td><%= link_to event.tag, event_path(event) %></td>
+					        </tr>
+					    <% else %>
+					    	<tr>		 
+					            <td><%= event.start_date.strftime("%A, %b %e") %></td>
+					            <td><%= event.start_time.strftime("%l:%M %P") %></td>
+					            <td><%= event.end_time.strftime("%l:%M %P") %></td>
+					            <td><%= link_to event.tag, event_path(event) %></td>
+					        </tr>
+					    <% end %>
 			        <% end %>
 		        <% end %>
 		    </tbody>
 		</table>
   	</aside>
-  	<!--
-  	<div class="span9">
-  		<ol class="events">
-	    	<% @events.each do |event| %>
-	        	<li>
-	            	<span class="content"><%= event.tag %></span>
-	          	</li>
-	        <% end %>
-    	</ol>
-	</div>
-	-->
 </div>
