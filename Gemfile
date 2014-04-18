@@ -12,7 +12,7 @@ gem 'bootstrap-will_paginate', '0.0.9'
 gem 'bootstrap-datepicker-rails'
 gem 'jquery-timepicker-rails'
 gem 'date_validator'
-gem "simple_calendar", "~> 0.1.10"
+gem 'simple_calendar', '~> 0.1.10'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'

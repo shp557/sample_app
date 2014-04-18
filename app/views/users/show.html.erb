@@ -4,7 +4,7 @@
     <h3>My events</h3>
     <% if @user.events.any? %>
       <ol class="events">
-        <% @user.events.each do |event| %>
+        <% (@user.events.sort_by! {|obj| obj.updated_at  unless obj.blank?} ).reverse.each do |event| %>
           <li>
             <h5><%= event.tag %></h1>
             <p><small><%= event.start_date.strftime("%A, %b %e") %>, <%= event.start_time.strftime("%l:%M %P") %> - <%= event.end_time.strftime("%l:%M %P") %>, <%= event.location %> </small></p>
