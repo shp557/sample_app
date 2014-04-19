@@ -42,7 +42,6 @@ class EventsController < ApplicationController
 		if @event.update_attributes(event_params)
 		  flash[:success] = "Event updated"
 		  redirect_to user_path(current_user)
-		  logger.debug "Post should be valid"
 		else
 		  render 'edit'
 		end
