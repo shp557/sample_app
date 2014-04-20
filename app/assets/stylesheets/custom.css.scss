@@ -11,7 +11,7 @@ $grayMediumLight: #eaeaea;
 /* universal */
 
 html {
-  overflow-y: scroll;
+  overflow-y: scroll; 
 }
 
 body {
@@ -37,6 +37,22 @@ textarea {
 .hero-unit{
   background-color: rgba(0, 0, 0, 0);
  }
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.6em;
+  font-family: serif;
+  color: rgba(150, 0, 20, 0.7);
+  letter-spacing: -1px;
+  padding-top: 9px;
+  line-height: 1;
+}
+
+#logo:hover {
+  color: rgba(150, 0, 20, 1);
+  text-decoration: none;
+}
 
  .myButton{
   width: 100px;
@@ -176,19 +192,12 @@ aside {
   }
 }
 
-/* home page only */
-
-.home_only {
-  background-image: image-url('unsplash.jpg');
-  background-repeat: no-repeat;
-  background-size: 100%;
-}
-
 /* calendar */
 
 .calendar td { 
   height: 100px; 
   width: 14.28%; 
 }
+
 
 @import "bootstrap-responsive";

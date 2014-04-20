@@ -5,8 +5,7 @@
 		    <thead>
 		        <tr>
 		            <th>Date</th>
-		            <th>Start</th>
-		            <th>End</th>
+		            <th>Time</th>
 		            <th>Listing</th>
 		        </tr>
 		    </thead>
@@ -15,23 +14,20 @@
 		        	<% if check(event) %>
 			        	<tr class="error">		
 				            <td><%= event.start_date.strftime("%A, %b %e") %></td>
-				            <td><%= event.start_time.strftime("%l:%M %P") %></td>
-				            <td><%= event.end_time.strftime("%l:%M %P") %></td>
+				            <td><%= event.start_time.strftime("%l:%M %P") %> - <%= event.end_time.strftime("%l:%M %P") %></td>
 				            <td><%= link_to event.tag, event_path(event) %></td>
 				        </tr>
 				    <% else %>
 				    	<% if day(event) %>
 					    	<tr class="success">		        
 					            <td><%= event.start_date.strftime("%A, %b %e") %></td>
-					            <td><%= event.start_time.strftime("%l:%M %P") %></td>
-					            <td><%= event.end_time.strftime("%l:%M %P") %></td>
+					            <td><%= event.start_time.strftime("%l:%M %P") %> - <%= event.end_time.strftime("%l:%M %P") %></td>
 					            <td><%= link_to event.tag, event_path(event) %></td>
 					        </tr>
 					    <% else %>
 					    	<tr>		 
 					            <td><%= event.start_date.strftime("%A, %b %e") %></td>
-					            <td><%= event.start_time.strftime("%l:%M %P") %></td>
-					            <td><%= event.end_time.strftime("%l:%M %P") %></td>
+					            <td><%= event.start_time.strftime("%l:%M %P") %> - <%= event.end_time.strftime("%l:%M %P") %></td>
 					            <td><%= link_to event.tag, event_path(event) %></td>
 					        </tr>
 					    <% end %>
