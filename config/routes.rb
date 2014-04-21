@@ -9,9 +9,9 @@ SampleApp::Application.routes.draw do
   match '/signin',   to: 'sessions#new',   via: 'get'
   match '/signout',   to: 'sessions#destroy',   via: 'delete'
   match '/post',     to: 'events#new', via: 'get'
-  match 'calendar', to: 'events#calendar', via: 'get'
+  match '/list', to: 'events#index', via: 'get'
 
-  root 'events#index'
+  root 'events#calendar'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

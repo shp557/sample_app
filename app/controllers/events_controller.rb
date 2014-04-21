@@ -4,11 +4,16 @@ class EventsController < ApplicationController
 	
 	def index
 		#@events = Event.all.sort_by{ |event| [event.start_date, event.start_time] }
-		@events = Event.where('start_date >= ?', Date.today).sort_by{ |event| [event.start_date, event.start_time] }
+		#@events = Event.where('start_date >= ?', Date.today).sort_by{ |event| [event.start_date, event.start_time] }
+		@events = Event.all
+		
+		respond_to do |format|
+    		format.html
+    		format.json 
+    	end
 	end
 
 	def calendar
-    	@events = Event.all
   	end
 
 	def show
@@ -16,7 +21,6 @@ class EventsController < ApplicationController
 		
 		respond_to do |format|
       		format.html
-      		format.js
     	end
 	end
 

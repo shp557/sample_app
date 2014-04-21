@@ -17,4 +17,5 @@
 //= require bootstrap-datepicker
 //= require jquery.timepicker.js
 //= require bootstrap-modal
+//= require fullcalendar
 //= require_tree .
