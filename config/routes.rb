@@ -10,6 +10,7 @@ SampleApp::Application.routes.draw do
   match '/signout',   to: 'sessions#destroy',   via: 'delete'
   match '/post',     to: 'events#new', via: 'get'
   match '/list', to: 'events#index', via: 'get'
+  match '/calendar', to: 'events#calendar', via: 'get'
 
   root 'events#calendar'
   # The priority is based upon order of creation: first created -> highest priority.
