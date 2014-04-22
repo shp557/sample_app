@@ -14,5 +14,6 @@
           <li><%= @event.content %></li>
       </span>
     </ol>  
+    <p id="post">Posted by <%= User.find(@event.user_id).name %></p>
   </div>
 </div>

@@ -85,8 +85,15 @@ h2 {
 }
 
 p {
-  font-size: 1.1em;
   line-height: 1.7em;
+}
+
+
+#post {
+  color: #7a7a7a;
+  font-size: 1.0em;
+  font-style: italic;
+  padding: 10px 0;
 }
 
 /* miscellaneous */
@@ -190,10 +197,6 @@ aside {
     height: 100px;
     margin-bottom: 5px;
   }
-}
-
-.outdated {
-  color: $grayMediumLight;
 }
 
 /* calendar */
