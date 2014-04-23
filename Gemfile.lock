@@ -37,6 +37,8 @@ GEM
       railties (>= 3.0)
     bootstrap-sass (2.3.2.0)
       sass (~> 3.2)
+    bootstrap-timepicker-rails-addon (0.2.6.1)
+      railties (>= 3.1, < 5.0)
     bootstrap-will_paginate (0.0.9)
       will_paginate
     builder (3.1.4)
@@ -46,7 +48,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    childprocess (0.5.2)
+    childprocess (0.5.3)
       ffi (~> 1.0, >= 1.0.11)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -192,6 +194,7 @@ DEPENDENCIES
   bcrypt-ruby (= 3.1.2)
   bootstrap-datepicker-rails
   bootstrap-sass (= 2.3.2.0)
+  bootstrap-timepicker-rails-addon
   bootstrap-will_paginate (= 0.0.9)
   capybara (= 2.1.0)
   coffee-rails (= 4.0.1)

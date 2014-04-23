@@ -13,13 +13,13 @@
     <%= f.text_field :tag %>
 
     <%= f.label :start_date, "Date" %>
-    <%= f.text_field :start_date, id: "datepicker", value: ''%>
+    <%= f.text_field :start_date, id: "datepicker", :value => @event.start_date.strftime('%Y-%m-%d') %>
 
     <%= f.label :start_time, "Start time" %>
-    <%= f.datetime_field :start_time, id: "start_time", value: '' %>
+    <%= f.datetime_field :start_time, id: "start_time", :value => @event.start_time.strftime('%I: %M %p') %>
 
     <%= f.label :end_time, "End time" %>
-    <%= f.datetime_field :end_time, id: "end_time", value: '' %>
+    <%= f.datetime_field :end_time, id: "end_time", :value => @event.end_time.strftime('%I: %M %p') %>
 
     <%= f.label :content, "Description" %>
     <%= f.text_area :content %>
@@ -43,19 +43,13 @@
   });
 
   $('#start_time').timepicker({
-    scrollDefaultNow: true,
-    timeFormat: 'g:ia'
-  });
-
-  $('#start_time').on('changeTime', function() {
-    var strTime = $(this).val();
-    $('#end_time').timepicker({ 'minTime': strTime});
+    template: false,
+    showInputs: false
   });
 
   $('#end_time').timepicker({
-    timeFormat: 'g:ia',
-    scrollDefaultNow: true
+    template: false,
+    showInputs: false
   });
 
-  $('#f').find("input[start")
 </script>

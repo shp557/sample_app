@@ -9,13 +9,14 @@
 //
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
+// require jquery.timepicker.js
+//
 //
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
 //= require turbolinks
 //= require bootstrap-datepicker
-//= require jquery.timepicker.js
-//= require bootstrap-modal
+//= require bootstrap-timepicker
 //= require fullcalendar
 //= require_tree .

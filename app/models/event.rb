@@ -8,7 +8,7 @@ class Event < ActiveRecord::Base
 	validates :start_date, presence: true
 	validates :start_time, presence: true
 	validates :location, presence: true
-	validates :end_time, presence: true, date: { :after => :start_time}
+	validates :end_time, presence: true, date: { :after => :start_time, :message => "should be after start time."}
 
 	before_save :convert
 	
