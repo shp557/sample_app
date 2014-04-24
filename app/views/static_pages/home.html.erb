@@ -1,9 +1,11 @@
 <% @title = "Sample App" %>
+<% @boolean = true %>
 <div class="center hero-unit">
-	<h1>Hello</h1>
+	<h1>Welcome</h1>
 	
-	<div style="padding-top: 20px">
-		<%= link_to "View events", '#', class: "btn btn-large btn-primary myButton" %>
-		<%= link_to "Sign up", signup_path, class: "btn btn-large btn-primary myButton" %>
+	<div style="padding: 20px">
+		<p>Welcome to the first class-wide events calendar. This site is a way to quickly and easily add, edit, and view events happening around campus. Simply create an account and begin posting your events for all to see. We haven't fully tested the site, so there are bound to be some bugs (not bacteria); please let us know if something is buggy, or if you have recommendations for the site.</p>
 	</div>
+	<%= link_to "Enter site", calendar_path, class: "btn btn-large btn-primary myButton" %>
+	
 </div>
