@@ -14,6 +14,6 @@
           <li><%= @event.content %></li>
       </span>
     </ol>  
-    <p id="post">Posted by <%= User.find(@event.user_id).name %></p>
+    <p id="post">Posted by <%= link_to User.find(@event.user_id).name, user_path(User.find(@event.user_id)) %></p>
   </div>
 </div>

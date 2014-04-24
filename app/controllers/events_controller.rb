@@ -1,10 +1,10 @@
 class EventsController < ApplicationController
 	before_action :signed_in_user, only: [:new, :create, :edit, :update, :destroy]
-	before_action :correct_user, only: [:edit, :update, :destroy]
+	before_action :correct_user, only: [:edit, :update]
 	
 	def index
-		@events = Event.all.sort_by{ |event| [event.start_date, event.start_time] }
-		#@events = Event.where('start_date >= ?', Date.today).sort_by{ |event| [event.start_date, event.start_time] }
+		#@events = Event.all.sort_by{ |event| [event.start_date, event.start_time] }
+		@events = Event.where('start_date >= ?', Date.today).sort_by{ |event| [event.start_date, event.start_time] }
 	end
 
 	def calendar
@@ -65,5 +65,9 @@ class EventsController < ApplicationController
 	    def correct_user
 	      @event = current_user.events.find_by(id: params[:id])
 	      redirect_to root_url if @event.nil?
+    	end
+
+    	def admin_user
+      	  redirect_to(root_url) unless current_user.admin?
     	end
 end
