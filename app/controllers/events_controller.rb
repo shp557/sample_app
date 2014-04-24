@@ -31,7 +31,7 @@ class EventsController < ApplicationController
 		@event = current_user.events.build(event_params)
 	    if @event.save
 	      flash[:success] = "Event created!"
-	      redirect_to root_url
+	      redirect_to calendar_path
 	    else
 	      render 'new'
 	    end
@@ -64,10 +64,10 @@ class EventsController < ApplicationController
 
 	    def correct_user
 	      @event = current_user.events.find_by(id: params[:id])
-	      redirect_to root_url if @event.nil?
+	      redirect_to calendar_path if @event.nil?
     	end
 
     	def admin_user
-      	  redirect_to(root_url) unless current_user.admin?
+      	  redirect_to(calendar_path) unless current_user.admin?
     	end
 end
