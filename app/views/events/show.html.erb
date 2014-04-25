@@ -11,7 +11,7 @@
         <strong>Location</strong>
           <li><%= @event.location %></li>
         <strong>Description</strong>
-          <li><%= @event.content %></li>
+          <li><%= simple_format h @event.content %></li>
       </span>
     </ol>  
     <p id="post">Posted by <%= link_to User.find(@event.user_id).name, user_path(User.find(@event.user_id)) %></p>

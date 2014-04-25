@@ -8,5 +8,4 @@ module EventsHelper
 		y = Time.now
 		x.strftime("%A, %b %e") == y.strftime("%A, %b %e")
 	end
-
 end
