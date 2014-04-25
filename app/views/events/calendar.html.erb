@@ -24,7 +24,12 @@ $(document).ready(function() {
 		eventSources: [{
 			ignoreTimezone: false, 
 			url: '/calendar.json'
-		}] 
+		}],
+		titleFormat: {
+			month: 'MMMM yyyy',                             // September 2009
+    		week: "MMM d[ yyyy]{ '&ndash;'[ MMM] d, yyyy}", // Sep 7 - 13 2009
+    		day: 'dddd, MMM d, yyyy'
+		}
     })
 
 });
