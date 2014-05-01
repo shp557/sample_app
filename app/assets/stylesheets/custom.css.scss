@@ -11,7 +11,7 @@ $grayMediumLight: #eaeaea;
 /* universal */
 
 html {
-  overflow-y: scroll; 
+  overflow-y: scroll;
 }
 
 body {
@@ -37,6 +37,14 @@ textarea {
 .hero-unit{
   background-color: rgba(255, 255, 255, 0.4);
  }
+
+.hero-unit h1 {
+  margin-bottom: 0;
+  font-size: 60px;
+  line-height: 1;
+  font-weight: normal;
+  letter-spacing: -1px;
+}
 
 .color-1{
   background: asset-url('back.jpg') no-repeat center center fixed;
@@ -73,7 +81,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 2em;
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
