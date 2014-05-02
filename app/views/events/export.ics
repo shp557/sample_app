@@ -3,4 +3,4 @@
 	<% @calendar.add_event(event)%>
 <% end %>
 <% @calendar.publish %>
-<%= @calendar.to_ical %>
+<%= @calendar.to_ical.html_safe %>
