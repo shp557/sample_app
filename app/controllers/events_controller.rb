@@ -31,6 +31,7 @@ class EventsController < ApplicationController
 		    @e.description = event.content
 		    @e.uid = event.id
 		    @e.url = event_url(event)
+		    @e.location = event.location
 		  	@ary.push(@e)
 		end
   		respond_to do |format|
