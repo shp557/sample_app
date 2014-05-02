@@ -15,6 +15,7 @@ gem 'simple_calendar', '~> 0.1.10'
 gem 'fullcalendar-rails'
 gem 'rabl'
 gem 'bootstrap-timepicker-rails-addon'
+gem 'icalendar'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'

@@ -4,8 +4,6 @@
     <section>
       <h3>Sign up</h3>
     </section>
-
-
       <%= form_for(@user) do |f| %>
 
         <%= render 'shared/error_messages', object: f.object %>
@@ -25,6 +23,5 @@
         <br>
         <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
       <% end %>
-  
   </aside>
 </div>

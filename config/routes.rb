@@ -12,6 +12,7 @@ SampleApp::Application.routes.draw do
   match '/post',     to: 'events#new', via: 'get'
   match '/list', to: 'events#index', via: 'get'
   match '/calendar', to: 'events#calendar', via: 'get'
+  match '/export', to: 'events#export', via: 'get'
 
   root 'static_pages#home'
   # The priority is based upon order of creation: first created -> highest priority.

@@ -15,6 +15,30 @@ class EventsController < ApplicationController
     	end
   	end
 
+  	def export
+		@events = Event.all
+		@ary = Array.new
+
+		@events.each do |event|
+		  	@e=Icalendar::Event.new   
+
+		  	@a = event.start_time
+		  	@b = event.end_time
+		  	@e.dtstart=DateTime.civil(@a.year, @a.month, @a.day, @a.hour, @a.min)    
+            @e.dtend=DateTime.civil(@b.year, @b.month, @b.day, @b.hour, @b.min)  
+
+		    @e.summary = event.tag
+		    @e.description = event.content
+		    @e.uid = event.id
+		    @e.url = event_url(event)
+		  	@ary.push(@e)
+		end
+  		respond_to do |format|
+    		format.ics
+    		format.html
+  		end  
+	end
+
 	def show
 		@event = Event.find(params[:id])
 		
