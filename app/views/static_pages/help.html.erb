@@ -6,13 +6,94 @@
     </section>
   </aside>
 </div>
-<p>Follow these instructions to get started:</p>
-<ol>
-	<li>Sign in to your account, or click to <%= link_to "register", signup_path %>.</li>
-	<li>Click <strong>Post</strong> to add your event, and add your event details in the form provided.</li>
-	<li>To edit, delete, or view your events, go to <strong>Account > My events</strong>.</li>
-	<li>Check the <%= link_to "calendar", calendar_path %> to see all events!</li>
-</ol>
-<p>If you need any help, please email Abhayjit (abhayjit_singh@hms.harvard.edu) or Sachin (sachin_patel@hms.harvard.edu), and we'll get back to you as soon as possible.</p>
 
-<p>Thanks!</p>
+<div class="panel-group" id="accordion">
+  
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          Add events
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in">
+      <div class="panel-body">
+      	<p>Follow these instructions to get started:</p>
+		<ol>
+			<li>Sign in to your account, or click to <%= link_to "register", signup_path %>.</li>
+			<li>Click <strong>Post</strong> to add your event, and add your event details in the form provided.</li>
+			<li>To edit, delete, or view your events, go to <strong>Account > My events</strong>.</li>
+			<li>Check the <%= link_to "calendar", calendar_path %> to see all events!</li>
+		</ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+          Sync with gcal
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse">
+      <div class="panel-body">
+        <p>To sync with google calendar:</p>
+		<ol>
+			<li>Sign in to your google account to access your calendar.</li>
+			<li>Click the down-arrow next to <strong>Other calendars</strong> (located on the left panel).</li>
+			<li>Select <strong>Add by URL</strong> from the menu.</li>
+			<li>Enter the following address in the field provided: https://www.google.com/calendar/ical/brgfio9ucid43kbidk37k92v1k%40group.calendar.google.com/public/basic.ics</li>
+			<li>Click <strong>Add calendar</strong>. The calendar will appear in the <strong>Other calendars</strong> section of the calendar list to the left.</li>
+		</ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+          Sync with iCal
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse">
+      <div class="panel-body">
+        <p>To sync with iCal:</p>
+		<ol>
+			<li>Open the <strong>Calendar</strong> program (in Applications). </li>
+			<li>From the <strong>File</strong> menu, select <strong>New Calendar Subscription</strong>.</li>
+			<li>Enter the following address in the field provided: https://www.google.com/calendar/ical/brgfio9ucid43kbidk37k92v1k%40group.calendar.google.com/public/basic.ics</li>
+			<li>Update the Auto-refresh frequency to <strong>Every day</strong> (just in case an event has been recently added or updated), then click OK.</li>
+			<li>The events should now appear in your calendar.</li>
+		</ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+          Contact us
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFour" class="panel-collapse collapse">
+      <div class="panel-body">
+        If you need any help, please email us at <strong>hms.eventscal@gmail.com</strong> and we will get back to you as soon as possible.
+        <br><br>
+        Thanks!
+        <br>
+        Sachin and Abhayjit
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
