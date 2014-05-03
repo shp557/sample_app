@@ -43,19 +43,19 @@ textarea {
   margin-bottom: 0;
   font-size: 55px;
   line-height: 1;
-  font-weight: normal;
+  font-weight: 300;
   letter-spacing: -1px;
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: center;
 }
 
 .color-1{
-  /*background: asset-url('back.jpg') no-repeat center center fixed;*/
+  /*background: asset-url('back.jpg') no-repeat center center fixed;
   background: asset-url('back.jpg') no-repeat center center fixed;
   -webkit-background-size: cover; 
   -moz-background-size: cover;    
   -o-background-size: cover;      
-  background-size: cover;  
+  background-size: cover;*/
 }
 
 #logo {
@@ -75,7 +75,7 @@ textarea {
 }
 
  .myButton{
-  width: 100px;
+  font-size: 0.95em;
  }
 
  .visited {
