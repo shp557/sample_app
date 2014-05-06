@@ -21,6 +21,7 @@ class EventsController < ApplicationController
 
 		@events.each do |event|
 		  	@e=Icalendar::Event.new   
+		  	@e.uid = event.id
 
 		  	@a = event.start_time
 		  	@b = event.end_time
@@ -29,7 +30,7 @@ class EventsController < ApplicationController
 
 		    @e.summary = event.tag
 		    @e.description = event.content
-		    @e.uid = event.id
+		    
 		    @e.url = event_url(event)
 		    @e.location = event.location
 		  	@ary.push(@e)
