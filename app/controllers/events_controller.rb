@@ -30,6 +30,7 @@ class EventsController < ApplicationController
 
 		    @e.summary = event.tag
 		    @e.description = event.content
+		    @e.sequence = 1
 		    
 		    @e.url = event_url(event)
 		    @e.location = event.location
