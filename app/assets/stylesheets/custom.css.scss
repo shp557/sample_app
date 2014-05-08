@@ -74,6 +74,21 @@ textarea {
   text-decoration: none;
 }
 
+/* buttons */
+
+.btn-basecamp {
+    background-image: none;
+  background: #fff;
+  border: 2px solid #ddd;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.btn-basecamp:hover {
+  border: 2px solid #000;
+  background: #fff;
+}
+
  .myButton{
   font-size: 0.95em;
  }
