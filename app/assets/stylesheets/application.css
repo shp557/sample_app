@@ -14,5 +14,5 @@
  *= require bootstrap-datepicker
  *= require fullcalendar
  *= require bootstrap-timepicker
- *= require_tree .
+ *= require_tree ./web
  */

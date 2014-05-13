@@ -1,0 +1,82 @@
+<% @title = "Events" %>
+<ul data-role="listview" data-inset="true">
+	<% @events_mod = listview(@events) %>
+	<% @events_mod.each do |arr| %>
+
+		<li data-role="list-divider"><%= arr.first.start_date.strftime("%A, %b %e") %><span class="ui-li-count"><%= arr.size %></span></li>
+
+		<% arr.each do |event| %>
+			<li>
+				<%= link_to event_path(event) do %>
+  					<h2 class="ui-li-desc" style="text-align:left"><%= event.tag %></h2>
+    				<p class="tight"><%= event.start_time.strftime("%l:%M %P") %> - <%= event.end_time.strftime("%l:%M %P") %></p>
+    				<p class="tight"><%= event.location %></p>
+				<% end %>
+    		</li>
+		<% end %>
+
+    <% end %>
+</ul>
+
+<!--
+<ul data-role="listview" data-inset="true">
+	<li data-role="list-divider">Friday, October 8, 2010 <span class="ui-li-count">2</span></li>
+    <li><a href="index.html">
+    <h2 style="text-align:left">Stephen Weber</h2>
+    <p><strong>You've been invited to a meeting at Filament Group in Boston, MA</strong></p>
+    <p>Hey Stephen, if you're available at 10am tomorrow, we've got a meeting with the jQuery team.</p>
+        
+    </a></li>
+    <li><a href="index.html">
+    <h2>jQuery Team</h2>
+    <p><strong>Boston Conference Planning</strong></p>
+    <p>In preparation for the upcoming conference in Boston, we need to start gathering a list of sponsors and speakers.</p>
+        <p class="ui-li-aside"><strong>9:18</strong>AM</p>
+    </a></li>
+
+    <li data-role="list-divider">Thursday, October 7, 2010 <span class="ui-li-count">1</span></li>
+    <li><a href="index.html">
+    <h2>Avery Walker</h2>
+    <p><strong>Re: Dinner Tonight</strong></p>
+    <p>Sure, let's plan on meeting at Highland Kitchen at 8:00 tonight. Can't wait!</p>
+        <p class="ui-li-aside"><strong>4:48</strong>PM</p>
+    </a></li>
+</ul>
+-->
+
+<!--
+	  	<table data-role="table" class="table table-condensed">
+		    <thead>
+		        <tr>
+		            <th>Date</th>
+		            <th>Time</th>
+		            <th>Listing</th>
+		        </tr>
+		    </thead>
+		    <tbody>
+		        <% @events.each do |event| %>
+		        	<% if check(event) %>
+			        	<tr>		
+				            <td><font color='#9e9e9e'><%= event.start_date.strftime("%A, %b %e") %></font></td>
+				            <td><font color='#9e9e9e'><%= event.start_time.strftime("%l:%M %P") %> - <%= event.end_time.strftime("%l:%M %P") %></font></td>
+				            <td><%= link_to event.tag, event_path(event), {:style=>'color:#9e9e9e'}%></td>
+				        </tr>
+				    <% else %>
+				    	<% if day(event) %>
+					    	<tr class="warning">		 
+					            <td><%= event.start_date.strftime("%A, %b %e") %></td>
+					            <td><%= event.start_time.strftime("%l:%M %P") %> - <%= event.end_time.strftime("%l:%M %P") %></td>
+					            <td><%= link_to event.tag, event_path(event) %></td>
+					        </tr>
+					    <% else %>
+					    	<tr>		 
+					            <td><%= event.start_date.strftime("%A, %b %e") %></td>
+					            <td><%= event.start_time.strftime("%l:%M %P") %> - <%= event.end_time.strftime("%l:%M %P") %></td>
+					            <td><%= link_to event.tag, event_path(event) %></td>
+					        </tr>
+					    <% end %>
+				    <% end %>
+		        <% end %>
+		    </tbody>
+		</table>
+-->

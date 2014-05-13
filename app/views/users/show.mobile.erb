@@ -1,0 +1,30 @@
+<% @title = "User page" %>
+<div class="row">
+  <aside class="span9">
+    <section>
+    <h3><%= @user.name %>'s events</h3>
+    </section>
+    <% if @user.events.any? %>
+      <ol class="events">
+        <% (@user.events.sort_by! {|obj| obj.updated_at  unless obj.blank?} ).reverse.each do |event| %>
+          <li>
+            <h5><%= event.tag %></h1>
+            <p><small><%= event.start_date.strftime("%A, %b %e") %>, <%= event.start_time.strftime("%l:%M %P") %> - <%= event.end_time.strftime("%l:%M %P") %>, <%= event.location %> </small></p>
+            <% if current_user?(@user) %>
+              <%= link_to "edit", edit_event_path(event) %> | 
+              <%= link_to "delete", event, method: :delete, data: { confirm: "You sure?" } %>
+            <% elsif current_user != nil && current_user.admin? %>
+              <%= link_to "delete", event, method: :delete, data: { confirm: "You sure?" } %>
+            <% end %>
+          </li>
+        <% end %>
+      </ol>
+    
+    <% else %>
+      <div>
+        <p>No events have been created yet.</p>
+      </div> 
+    <% end %>
+  </aside>
+</div>
+

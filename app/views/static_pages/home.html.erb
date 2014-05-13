@@ -1,5 +1,17 @@
-<% @title = "Welcome" %>
+<% @title = "Home" %>
 <% @boolean = true %>
+<!--
+<div class="modal hide fade" id="myModal">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">×</a>
+    <h3>Modal header</h3>
+  </div>
+  <div class="modal-body">
+    <p>One fine body…</p>
+  </div>
+</div>
+-->
+
 <div class="center hero-unit welcome">
 	<h1>Welcome</h1>
 	
@@ -23,5 +35,10 @@
 
   ga('create', 'UA-50384422-1', 'hmsevents.herokuapp.com');
   ga('send', 'pageview');
+
+
+  $(window).load(function(){
+  	$('#myModal').modal('show');
+  });
 
 </script>

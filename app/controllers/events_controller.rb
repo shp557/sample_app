@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 	before_action :signed_in_user, only: [:new, :create, :edit, :update, :destroy]
 	before_action :correct_user, only: [:edit, :update]
-	
+
 	def index
 		#@events = Event.all.sort_by{ |event| [event.start_date, event.start_time] }
 		@events = Event.where('start_date >= ?', Date.today).sort_by{ |event| [event.start_date, event.start_time] }
