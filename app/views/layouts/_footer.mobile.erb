@@ -1,6 +1,23 @@
+<!--
 <div data-role="panel" data-position-fixed="true" data-display="push" data-theme="b" id="nav-panel">
     <ul data-role="listview">
         <li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
+        <li><%= link_to "View", list_path %></li>
+        <li><%= link_to "Help", help_path %></li>
+        <% if signed_in? %>
+            <li><%= link_to "Post", post_path %></li>
+            <li data-role="list-divider">Account</li>
+            <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+            <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+        <% else %>
+            <li><%= link_to "Sign in / up", signin_path %></li>
+        <% end %>
+    </ul>
+</div>
+-->
+
+<div data-role="panel" id="left-panel" data-theme="b">
+    <ul data-role="listview">
         <li><%= link_to "View", list_path %></li>
         <li><%= link_to "Help", help_path %></li>
         <% if signed_in? %>
