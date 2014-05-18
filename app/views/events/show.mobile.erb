@@ -1,8 +1,8 @@
-<% @title = "Event" %>
+<% @title = "Event details" %>
 <div class="row">
   <div class="span9">
-    <h3><%= @event.tag %></h3>
-    <ol class="events">
+    <h4 style="padding-bottom:10px"><%= @event.tag %></h4>
+    <ul class="events">
       <span class="content">
         <strong>Date</strong>
           <li><%= @event.start_date.strftime("%A, %b %e") %></li>
@@ -13,7 +13,7 @@
         <strong>Description</strong>
           <li><%= simple_format h @event.content %></li>
       </span>
-    </ol>  
+    </ul>  
     <p id="post">Posted by <%= link_to User.find(@event.user_id).name, user_path(User.find(@event.user_id)) %></p>
   </div>
 </div>
