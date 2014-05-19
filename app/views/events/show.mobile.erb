@@ -1,4 +1,17 @@
 <% @title = "Event details" %>
+<ul data-role="listview" data-inset="true">
+    <li data-role="list-divider">Date</li>
+      <li><%= @event.start_date.strftime("%A, %b %e") %></li>
+    <li data-role="list-divider">Time</li>
+      <li><%= @event.start_time.strftime("%l:%M %P") %>-<%= @event.end_time.strftime("%l:%M %P") %></li>
+    <li data-role="list-divider">Location</li>
+      <li><%= @event.location %></li>
+    <li data-role="list-divider">Description</li>
+      <li><%= @event.content.html_safe %></li>
+</ul>
+<p id="post">Posted by <%= link_to User.find(@event.user_id).name, user_path(User.find(@event.user_id)) %></p>
+
+<!--
 <div class="row">
   <div class="span9">
     <h4 style="padding-bottom:10px"><%= @event.tag %></h4>
@@ -14,6 +27,7 @@
           <li><%= simple_format h @event.content %></li>
       </span>
     </ul>  
-    <p id="post">Posted by <%= link_to User.find(@event.user_id).name, user_path(User.find(@event.user_id)) %></p>
+    
   </div>
 </div>
+-->
