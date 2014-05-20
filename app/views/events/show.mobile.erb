@@ -7,7 +7,7 @@
     <li data-role="list-divider">Location</li>
       <li><%= @event.location %></li>
     <li data-role="list-divider">Description</li>
-      <li><%= @event.content.html_safe %></li>
+      <li style="font-size:1.3em; padding-left:14px; padding-bottom:0px; padding-top:0px;"><%= simple_format h @event.content %></li>
 </ul>
 <p id="post">Posted by <%= link_to User.find(@event.user_id).name, user_path(User.find(@event.user_id)) %></p>
 
