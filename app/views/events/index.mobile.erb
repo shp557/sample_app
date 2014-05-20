@@ -8,7 +8,7 @@
 		<% arr.each do |event| %>
 			<li>
 				<%= link_to event_path(event) do %>
-  					<h2 style="text-align:left"><%= event.tag %></h2>
+  					<h2 style="text-align:left; padding-bottom: 4px;"><%= event.tag %></h2>
     				<p class=""><%= event.start_time.strftime("%l:%M %P") %> - <%= event.end_time.strftime("%l:%M %P") %></p>
     				<p class=""><%= event.location %></p>
 				<% end %>
