@@ -9,7 +9,7 @@
   					<span class="input-group-addon"><i class="icon-search"></i></span>
   					<input type="text" id="system-search" name="q" class="form-control" placeholder="Filter">
 				</div>
-				
+
             </form>
         </div>
 
@@ -33,7 +33,7 @@
 				        </tr>
 				    <% else %>
 				    	<% if day(event) %>
-					    	<tr class="warning">		 
+					    	<tr>		 
 					            <td><%= event.start_date.strftime("%A, %b %e") %></td>
 					            <td><%= event.start_time.strftime("%l:%M %P") %> - <%= event.end_time.strftime("%l:%M %P") %></td>
 					            <td><%= link_to event.tag, event_path(event) %></td>
