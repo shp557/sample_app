@@ -1,4 +1,37 @@
 <% @title = "Event" %>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+<div class="container">    
+  <div id="loginbox" style="margin-top:20px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+    <div class="panel panel-info">
+
+      <div class="panel-heading">
+        <div class="panel-title"><%= @event.tag %></div>
+      </div>
+
+      <div style="padding-top:30px" class="panel-body">
+        <p><i class="icon-calendar"></i> <%= @event.start_date.strftime("%A, %b %e") %></p>
+        <p><i class="icon-time"></i> <%= @event.start_time.strftime("%l:%M %P") %> - <%= @event.end_time.strftime("%l:%M %P") %></p>
+        <p><i class="icon-map-marker"></i> <%= @event.location %></p>
+        <p><i class="icon-info-sign"></i> <%= simple_format_mod(@event.content)%></p>
+        <p id="post">Posted by <%= link_to User.find(@event.user_id).name, user_path(User.find(@event.user_id)) %></p>
+        <div class="fb-like" data-href=<%= request.original_url %> data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--
 <div class="row">
   <div class="span9">
     <h3><%= @event.tag %></h3>
@@ -17,3 +50,4 @@
     <p id="post">Posted by <%= link_to User.find(@event.user_id).name, user_path(User.find(@event.user_id)) %></p>
   </div>
 </div>
+-->

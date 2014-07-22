@@ -6,7 +6,7 @@
       <li><%= @event.start_time.strftime("%l:%M %P") %>-<%= @event.end_time.strftime("%l:%M %P") %></li>
     <li data-role="list-divider">Location</li>
       <li><%= @event.location %></li>
-    <li data-role="list-divider">Description</li>
+    <li data-role="list-divider" data-corners="false">Description</li>
     <div class="textresize">
       <li><%= simple_format h @event.content %></li>
     </div>

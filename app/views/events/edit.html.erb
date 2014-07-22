@@ -1,37 +1,44 @@
 <% @title = "Edit event" %>
-<div class="row">
-<aside class="span4">
-  <section>
-    <h3>Update your event</h3>
-  </section>
-  <section>
 
-    <%= form_for(@event) do |f| %>
-    <%= render 'shared/error_messages', object: f.object %>
+<div class="container">    
+  <div id="loginbox" style="margin-top:20px; margin-right:20%; margin-left: 20%" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+    <div class="panel panel-info">
 
-    <%= f.label :tag, "Listing" %>
-    <%= f.text_field :tag %>
+      <div class="panel-heading">
+        <div class="panel-title">Update event</div>
+      </div>
 
-    <%= f.label :start_date, "Date" %>
-    <%= f.text_field :start_date, id: "datepicker", :value => @event.start_date.strftime('%Y-%m-%d') %>
+      <div style="padding-top:30px" class="panel-body">
 
-    <%= f.label :start_time, "Start time" %>
-    <%= f.datetime_field :start_time, id: "start_time", :value => @event.start_time.strftime('%I: %M %p') %>
+      <%= form_for(@event) do |f| %>
 
-    <%= f.label :end_time, "End time" %>
-    <%= f.datetime_field :end_time, id: "end_time", :value => @event.end_time.strftime('%I: %M %p') %>
+        <%= render 'shared/error_messages', object: f.object %>
 
-    <%= f.label :content, "Description" %>
-    <%= f.text_area :content %>
+        <%= f.label :tag, "Listing" %>
+        <%= f.text_field :tag %>
 
-    <%= f.label :location, "Location" %>
-    <%= f.text_field :location %>
+        <%= f.label :start_date, "Date" %>
+        <%= f.text_field :start_date, id: "datepicker", :value => @event.start_date.strftime('%Y-%m-%d') %>
 
-    <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+        <%= f.label :start_time, "Start time" %>
+        <%= f.datetime_field :start_time, id: "start_time", :value => @event.start_time.strftime('%I: %M %p') %>
 
-    <% end %> 
-  </section>
-</aside>
+        <%= f.label :end_time, "End time" %>
+        <%= f.datetime_field :end_time, id: "end_time", :value => @event.end_time.strftime('%I: %M %p') %>
+
+        <%= f.label :content, "Description" %>
+        <%= f.text_area :content %>
+
+        <%= f.label :location, "Location" %>
+        <%= f.text_field :location %>
+
+        </br>
+        </br>
+        <%= f.submit "Save changes", class: "btn btn-large btn-block btn-primary" %>
+
+      <% end %> 
+    </div>
+  </div>
 </div>
 
 <script>

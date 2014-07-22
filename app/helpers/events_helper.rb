@@ -32,4 +32,16 @@ module EventsHelper
 		list 
 
 	end
+
+	def simple_format_mod(text, html_options = {}, options = {})
+
+	  text = sanitize(text) if options.fetch(:sanitize, true)
+	  paragraphs = split_paragraphs(text)
+
+	  if paragraphs.empty?
+	  else
+	    paragraphs.map! { |paragraph|
+	      raw(paragraph)}.join("\n\n").html_safe
+	  end
+	end
 end

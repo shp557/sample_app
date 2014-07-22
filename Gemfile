@@ -17,6 +17,7 @@ gem 'rabl'
 gem 'bootstrap-timepicker-rails-addon'
 gem 'icalendar', '1.5.4'
 gem 'jquery_mobile_rails'
+gem 'simple_form'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'

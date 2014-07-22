@@ -14,7 +14,7 @@ SampleApp::Application.routes.draw do
   match '/calendar', to: 'events#calendar', via: 'get'
   match '/export', to: 'events#export', via: 'get'
 
-  root 'static_pages#home'
+  root 'events#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
