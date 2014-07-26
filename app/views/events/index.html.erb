@@ -1,55 +1,64 @@
 <% @title = "HMS Events" %>
-<div class="row">
-	<aside class="span9">
+<div class="row" style="margin-left:2%; margin-right:2%; margin-top:10px">
 
-		<div class="col-md-3">
-            <form action="#" method="get">
+    <% if @events.count == 0 %>
+        <aside class="span9">
+            <p>There are no upcoming events today.</p>
+        </aside>
+    
+    <% else %>
+
+    	<aside class="span9">
+
+    		<div class="col-md-3">
+                <form action="#" method="get">
+                
+                    <div class="input-group">
+      					<span class="input-group-addon"><i class="icon-search"></i></span>
+      					<input type="text" id="system-search" name="q" class="form-control" placeholder="Filter">
+    				</div>
+
+                </form>
+            </div>
+
             
-                <div class="input-group">
-  					<span class="input-group-addon"><i class="icon-search"></i></span>
-  					<input type="text" id="system-search" name="q" class="form-control" placeholder="Filter">
-				</div>
 
-            </form>
-        </div>
-
-        
-
-	  	<table class="table table-list-search">
-		    <thead>
-		        <tr>
-		            <th>Date</th>
-		            <th>Time</th>
-		            <th>Listing</th>
-		        </tr>
-		    </thead>
-		    <tbody>
-		        <% @events.each do |event| %>
-		        	<% if check(event) %>
-			        	<tr>		
-				            <td><font color='#9e9e9e'><%= event.start_date.strftime("%A, %b %e") %></font></td>
-				            <td><font color='#9e9e9e'><%= event.start_time.strftime("%l:%M %P") %> - <%= event.end_time.strftime("%l:%M %P") %></font></td>
-				            <td><%= link_to event.tag, event_path(event), {:style=>'color:#9e9e9e'}%></td>
-				        </tr>
-				    <% else %>
-				    	<% if day(event) %>
-					    	<tr>		 
-					            <td><%= event.start_date.strftime("%A, %b %e") %></td>
-					            <td><%= event.start_time.strftime("%l:%M %P") %> - <%= event.end_time.strftime("%l:%M %P") %></td>
-					            <td><%= link_to event.tag, event_path(event) %></td>
-					        </tr>
-					    <% else %>
-					    	<tr>		 
-					            <td><%= event.start_date.strftime("%A, %b %e") %></td>
-					            <td><%= event.start_time.strftime("%l:%M %P") %> - <%= event.end_time.strftime("%l:%M %P") %></td>
-					            <td><%= link_to event.tag, event_path(event) %></td>
-					        </tr>
-					    <% end %>
-				    <% end %>
-		        <% end %>
-		    </tbody>
-		</table>
-  	</aside>
+    	  	<table class="table table-list-search">
+    		    <thead>
+    		        <tr>
+    		            <th>Date</th>
+    		            <th>Time</th>
+    		            <th>Listing</th>
+    		        </tr>
+    		    </thead>
+    		    <tbody>
+    		        <% @events.each do |event| %>
+    		        	<% if check(event) %>
+    			        	<tr>		
+    				            <td><font color='#9e9e9e'><%= event.start_date.strftime("%A, %b %e") %></font></td>
+    				            <td><font color='#9e9e9e'><%= event.start_time.strftime("%l:%M %P") %> - <%= event.end_time.strftime("%l:%M %P") %></font></td>
+    				            <td><%= link_to event.tag, event_path(event), {:style=>'color:#9e9e9e'}%></td>
+    				        </tr>
+    				    <% else %>
+    				    	<% if day(event) %>
+    					    	<tr>		 
+    					            <td><%= event.start_date.strftime("%A, %b %e") %></td>
+    					            <td><%= event.start_time.strftime("%l:%M %P") %> - <%= event.end_time.strftime("%l:%M %P") %></td>
+    					            <td><%= link_to event.tag, event_path(event) %></td>
+    					        </tr>
+    					    <% else %>
+    					    	<tr>		 
+    					            <td><%= event.start_date.strftime("%A, %b %e") %></td>
+    					            <td><%= event.start_time.strftime("%l:%M %P") %> - <%= event.end_time.strftime("%l:%M %P") %></td>
+    					            <td><%= link_to event.tag, event_path(event) %></td>
+    					        </tr>
+    					    <% end %>
+    				    <% end %>
+    		        <% end %>
+    		    </tbody>
+    		</table>
+      	</aside>
+    <% end %>
 </div>
 
 <script>

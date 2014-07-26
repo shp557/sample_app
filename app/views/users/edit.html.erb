@@ -1,29 +1,43 @@
-<% @title = "Edit user" %>
-<div class="row">
-<aside class="span4">
-  <section>
-    <h3>Update your profile</h3>
-  </section>
-  <section>
+<% @title = "Update profile" %>
 
-    <%= form_for(@user) do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
+<div class="signinbox">    
+  <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+    <div class="panel panel-info">
 
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+      <div class="panel-heading">
+        <div class="panel-title">Update profile</div>
+      </div>
 
-      <%= f.label :email %>
-      <%= f.text_field :email %>
+      <div style="padding-top:30px" class="panel-body">
 
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+        <%= simple_form_for(@user) do |f| %>
+          <%= render 'shared/error_messages', object: f.object %>
 
-      <%= f.label :password_confirmation, "Confirm Password" %>
-      <%= f.password_field :password_confirmation %>
+          <%= f.input :name, :wrapper => :prepend, :label => false do %>
+            <span class="add-on"><i class="icon-tag"></i></span>
+            <%= f.input_field :name, placeholder: 'Name', style:'width: 240px' %>
+          <% end %>
 
-      <%= f.submit "Save changes", class: "btn btn-large btn-primary " %>
-    <% end %>
+          <%= f.input :email, :wrapper => :prepend, :label => false do %>
+            <span class="add-on"><i class="icon-user"></i></span>
+            <%= f.input_field :email, placeholder: 'Email address', style:'width: 240px' %>
+          <% end %>
 
-  </section>
-</aside>
+          <%= f.input :password, :wrapper => :prepend, :label => false do %>
+            <span class="add-on"><i class="icon-lock"></i></span>
+            <%= f.input_field :password, placeholder: 'Password', style:'width: 240px' %>
+          <% end %>
+
+          <%= f.input :password_confirmation, :wrapper => :prepend, :label => false do %>
+            <span class="add-on"><i class="icon-lock"></i></span>
+            <%= f.input_field :password_confirmation, placeholder: 'Confirm password', style:'width: 240px'%>
+          <% end %>
+
+          <%= f.submit "Save changes", class: "btn btn-block btn-primary " %>
+
+        <% end %>
+
+      </div>
+    </div>
+  </div>
 </div>
