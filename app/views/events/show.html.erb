@@ -1,3 +1,12 @@
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=298588743639726&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <% @title = @event.tag %>
 
 <div class="container">    
@@ -14,6 +23,7 @@
         <p><i class="icon-map-marker"></i> <%= @event.location %></p>
         <p><i class="icon-info-sign"></i> <%= simple_format_mod(@event.content)%></p>
         <p id="post">Posted by <%= link_to User.find(@event.user_id).name, user_path(User.find(@event.user_id)) %></p>
+        <div class="fb-like" data-href=<%= request.original_url %> data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
       </div>
     </div>
   </div>
