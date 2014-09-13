@@ -58,7 +58,7 @@ class EventsController < ApplicationController
 		@event = current_user.events.build(event_params)
 	    if @event.save
 	      flash[:success] = "Event created!"
-	      redirect_to calendar_path
+	      redirect_to list_path
 	    else
 	      render 'new'
 	    end
